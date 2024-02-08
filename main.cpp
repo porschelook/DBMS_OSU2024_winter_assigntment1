@@ -23,5 +23,14 @@ int main(int argc, char* const argv[]) {
   manager.createFromFile("Employee.csv");
   // Loop to lookup IDs until user is ready to quit
 
+  // manager.findRecordById(11432140);
+  // convert arguments to integers and loop though them to find the records
+  
+  for (int i = 1; i < argc; i++) {
+    cout << "--------------------------------" << endl;
+    int id = atoi(argv[i]);
+    manager.findRecordById(id);
+  }
+
   return 0;
 }
