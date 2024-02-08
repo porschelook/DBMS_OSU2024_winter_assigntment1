@@ -17,7 +17,8 @@ using namespace std;
 
 #include <vector>
 
-int main(int argc, char* const argv[]) {
+int main(int argc, char *const argv[])
+{
   // Create the EmployeeRelation file from Employee.csv
   StorageBufferManager manager("EmployeeRelation");
   manager.createFromFile("Employee.csv");
@@ -25,12 +26,28 @@ int main(int argc, char* const argv[]) {
 
   // manager.findRecordById(11432140);
   // convert arguments to integers and loop though them to find the records
-  
-  for (int i = 1; i < argc; i++) {
-    cout << "--------------------------------" << endl;
-    int id = atoi(argv[i]);
-    manager.findRecordById(id);
+  while (true)
+  {
+
+    cout << "Enter Employee ID to look up (or enter -1 to quit): ";
+    int employeeId;
+    cin >> employeeId;
+
+    if (employeeId == -1)
+    {
+      // User wants to quit
+      break;
+    }
+    manager.findRecordById(employeeId);
+    // Search for the given Employee ID
+    // manager.findRecordById(employeeId);
   }
+
+  // for (int i = 1; i < argc; i++) {
+  //   cout << "--------------------------------" << endl;
+  //   int id = atoi(argv[i]);
+
+  // }
 
   return 0;
 }
