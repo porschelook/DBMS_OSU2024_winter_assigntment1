@@ -15,11 +15,12 @@ Skeleton code for storage and buffer management
 #include "classes.h"
 using namespace std;
 
+#include <vector>
+
 int main(int argc, char* const argv[]) {
   // Create the EmployeeRelation file from Employee.csv
   StorageBufferManager manager("EmployeeRelation");
   manager.createFromFile("Employee.csv");
-
   // Loop to lookup IDs until user is ready to quit
 
   return 0;
